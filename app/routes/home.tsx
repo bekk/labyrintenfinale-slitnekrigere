@@ -2,6 +2,8 @@ import type { Route } from "./+types/home";
 import { ButtonWithIcon } from "~/components/ButtonWithIcon/ButtonWithIcon";
 import { NavLink, useNavigate } from "react-router";
 import QuestionMarkIcon from "~/icons/QuestionMarkIcon";
+import Navbar from "~/components/Navbar/Navbar";
+import Footer from "~/components/Footer/Footer";
 
 export function meta({}: Route.MetaArgs) {
   return [{ title: "CASTMATCH | Find Your Perfect Cast" }];
@@ -12,23 +14,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-10 py-4 px-6">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="text-2xl font-bold text-orange-600">CASTMATCH</div>
-          <div className="flex items-center gap-6">
-            <NavLink to="/about" className="text-gray-700 hover:text-orange-600 transition-colors">About</NavLink>
-            <NavLink to="/browse" className="text-gray-700 hover:text-orange-600 transition-colors">Browse</NavLink>
-            <NavLink to="/contact" className="text-gray-700 hover:text-orange-600 transition-colors">Contact</NavLink>
-            <NavLink 
-              to="/login"
-              className="px-4 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition-colors"
-            >
-              Log In
-            </NavLink>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section with Composite Background */}
       <div className="relative pt-28 pb-20 overflow-hidden">
@@ -189,7 +175,7 @@ export default function Home() {
         </div>
       </div>
 
-    
+      <Footer />
     </>
   );
 }

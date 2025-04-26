@@ -7,8 +7,9 @@ import {
     Button,
   } from "@material-tailwind/react";
 import { ImageCarousel } from "~/components/ImageCarousel/ImageCarousel";
+import { NavLink } from "react-router";
    
-  export function CardDefault({ 
+export function CardDefault({ 
     text, 
     name = "Alex", 
     age = 28, 
@@ -193,49 +194,147 @@ import { ImageCarousel } from "~/components/ImageCarousel/ImageCarousel";
     // Reality TV production companies/shows looking for contestants
     const productionCompanies = [
       {
-        name: "Paradise Hotel",
-        description: "Norges mest populære reality-show hvor deltakerne bor på et luksushotell i Mexico.",
-        imageUrl: "https://perheimly.no/wp-content/uploads/2015/09/paradisehotel-logo.jpg"
+        name: "Paradise Hotel Norge",
+        description: "Søker utadvendte deltakere mellom 20-30 år for en eksklusiv sesong på et luksushotell i Mexico.",
+        imageUrl: "https://www.medier24.no/wp-content/uploads/2022/10/paradise-hotel-solbergs-750x380.jpg"
       },
       {
-        name: "Ex on the Beach",
-        description: "Single på ferie møter sine eks-kjærester i dramatiske omstendigheter.",
-        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4f-qCXsoS6KYy0KfRnG3MVaCyo2zIj1mHjw&s"
+        name: "Ex on the Beach Norge",
+        description: "Casting pågår nå! Søker sterke personligheter som tør å utfordre seg selv foran kamera.",
+        imageUrl: "https://gfx.nrk.no/CkxPbe8LZWcBddKNMXOHjAPIryrffrfAYNW6XtW_JMvQ"
       },
       {
         name: "Farmen",
-        description: "Deltakere lever som bønder gjorde på starten av 1900-tallet i kamp om en gård.",
-        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb4l_FFLAItnivpnurejgNtUs3PtrlcmsWhg&s"
+        description: "Vil du teste dine grenser? Bli med på norsk TVs mest populære overlevelseskonkurranse.",
+        imageUrl: "https://www.varden.no/wp-content/uploads/2023/09/Farmen.jpg"
       },
       {
         name: "71 Grader Nord",
-        description: "Konkurransedeltagere går gjennom utfordrende ekspedisjoner i norsk natur.",
-        imageUrl: "https://image.tmdb.org/t/p/original/q1ofNBDlxnL0BbSobzk3I3jWtfB.png"
+        description: "Søker eventyrlystne deltakere som er i god fysisk form for vår jubileumssesong 2025.",
+        imageUrl: "https://www.tvnorge.no/getattachment/Programmer/71-grader-nord-kjendis/71-kjendis.png.aspx?width=1200&format=jpg"
       }
     ];
 
     return (
-      <div className="pt-16 p-4 container mx-auto">
-        <h1 className="text-4xl font-bold text-blue-600 mb-6">RealityCasting</h1>
-        <p className="text-xl mb-8 text-gray-700">Norges første plattform som kobler reality-TV produsenter direkte med potensielle deltakere</p>
+      <div className="relative pt-16 px-4 pb-8 container mx-auto">
+        {/* Login button in top right */}
+        <div className="absolute top-4 right-4">
+          <NavLink to="/login">
+            <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-600 rounded hover:bg-blue-50">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+              </svg>
+              Logg Inn
+            </button>
+          </NavLink>
+        </div>
+
+        <h1 className="text-4xl font-bold text-blue-600 mb-3">RealityCasting</h1>
+        <p className="text-xl mb-6 text-gray-700">Norges første plattform som kobler reality-TV produsenter direkte med potensielle deltakere</p>
+        
+        {/* Two prominent buttons for different user types - fixed styling */}
+        <div className="flex flex-col sm:flex-row gap-4 mb-8">
+          <button className="flex-1 py-4 flex items-center justify-center gap-3 text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+            </svg>
+            Bli med som deltaker
+          </button>
+          <button className="flex-1 py-4 flex items-center justify-center gap-3 text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h1.5C5.496 19.5 6 18.996 6 18.375m-3.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-1.5A1.125 1.125 0 0118 18.375M20.625 4.5H3.375m17.25 0c.621 0 1.125.504 1.125 1.125M20.625 4.5h-1.5C18.504 4.5 18 4.996 18 5.625m3.75 0v1.5c0 .621-.504 1.125-1.125 1.125M3.375 4.5c-.621 0-1.125.504-1.125 1.125M3.375 4.5h1.5C5.496 4.5 6 4.996 6 5.625m-3.75 0v1.5c0 .621.504 1.125 1.125 1.125m0 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m1.5-3.75C5.496 8.25 6 7.746 6 7.125v-1.5M4.875 8.25C4.254 8.25 3.75 8.754 3.75 9.375v1.5c0 .621.504 1.125 1.125 1.125m0-3.75h1.5m0 0c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m0 0h1.5m0 0c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125M4.875 21h14.25m0 0h1.5m0 0c.621 0 1.125-.504 1.125-1.125v-1.5m0 0c0-.621-.504-1.125-1.125-1.125M19.125 17.25h-1.5m0 0c-.621 0-1.125.504-1.125 1.125v1.5m1.5-3.75C17.254 15.75 16.75 16.254 16.75 16.875v1.5m1.5-3.75h-1.5m0 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M18 13.5h1.5m0 0c.621 0 1.125.504 1.125 1.125v1.5M9.75 12h4.5m0-8.25H9.75m0 0c-.621 0-1.125.504-1.125 1.125v1.5m0 0c0 .621.504 1.125 1.125 1.125m0 0h4.5m0 0c.621 0 1.125-.504 1.125-1.125v-1.5m0 0c0-.621-.504-1.125-1.125-1.125M9.75 21h4.5m0 0c.621 0 1.125-.504 1.125-1.125v-1.5m0 0c0-.621-.504-1.125-1.125-1.125m0 0H9.75m0 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125" />
+            </svg>
+            Registrer produksjonsselskap
+          </button>
+        </div>
         
         {/* Main content area with 2/3 - 1/3 split */}
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* 2/3 Featured Profile - "Our most popular user" */}
+          {/* 2/3 Featured Profile - "Our most popular user" with single image */}
           <div className="lg:w-2/3">
             <h2 className="text-2xl font-bold mb-4">Ukens Mest Populære Søker</h2>
             <div className="bg-white rounded-xl shadow-xl overflow-hidden">
-              <CardWithCarousel 
-                name="Magnus"
-                age={27}
-                text="Utadvendt og eventyrlysten. Elsker utfordringer og har ingen filter. Tidligere konkurransesvømmer med masse energi. Drømmer om å delta i et reality-show for å vise min ekte personlighet og kanskje finne kjærligheten!"
-                images={[
-                  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-                  "https://images.unsplash.com/photo-1655874819398-c6dfbec68567?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-                  "https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-                  "https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                ]}
-              />
+              <Card className="w-full overflow-hidden shadow-xl" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+                <div className="relative">
+                  <CardHeader 
+                    color="blue-gray" 
+                    className="relative h-[500px] m-0 p-0" 
+                    placeholder="" 
+                    onPointerEnterCapture={() => {}} 
+                    onPointerLeaveCapture={() => {}}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                      alt="Magnus profile image"
+                      className="w-full h-full object-cover"
+                    />
+                  </CardHeader>
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 z-10">
+                    <Typography
+                      variant="h3"
+                      color="white"
+                      className="mb-1 font-bold flex items-center"
+                      placeholder=""
+                      onPointerEnterCapture={() => {}}
+                      onPointerLeaveCapture={() => {}}
+                    >
+                      Magnus, 27
+                    </Typography>
+                    <Typography
+                      color="white"
+                      className="opacity-80"
+                      placeholder=""
+                      onPointerEnterCapture={() => {}}
+                      onPointerLeaveCapture={() => {}}
+                    >
+                      Oslo, Norge
+                    </Typography>
+                  </div>
+                </div>
+                
+                <CardBody className="p-6" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+                  <Typography 
+                    placeholder="" 
+                    onPointerEnterCapture={() => {}} 
+                    onPointerLeaveCapture={() => {}}
+                    className="text-gray-700 text-lg"
+                  >
+                    "Utadvendt og eventyrlysten. Elsker utfordringer og har ingen filter. Tidligere konkurransesvømmer med masse energi. Drømmer om å delta i et reality-show for å vise min ekte personlighet og kanskje finne kjærligheten!"
+                  </Typography>
+                </CardBody>
+                
+                <CardFooter
+                  className="flex justify-center gap-8 pt-0 pb-6"
+                  placeholder=""
+                  onPointerEnterCapture={() => {}}
+                  onPointerLeaveCapture={() => {}}
+                >
+                  <Button 
+                    color="red" 
+                    size="lg" 
+                    className="rounded-full p-4" 
+                    placeholder="" 
+                    onPointerEnterCapture={() => {}} 
+                    onPointerLeaveCapture={() => {}}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-8 w-8">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </Button>
+                  <Button 
+                    color="green" 
+                    size="lg" 
+                    className="rounded-full p-4" 
+                    placeholder="" 
+                    onPointerEnterCapture={() => {}} 
+                    onPointerLeaveCapture={() => {}}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-8 w-8">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                    </svg>
+                  </Button>
+                </CardFooter>
+              </Card>
             </div>
             
             <div className="mt-6 bg-blue-50 p-6 rounded-lg border border-blue-100">
@@ -282,14 +381,6 @@ import { ImageCarousel } from "~/components/ImageCarousel/ImageCarousel";
                   </div>
                 </div>
               ))}
-              
-              <div className="mt-8 p-4 bg-indigo-50 rounded-lg border border-indigo-100">
-                <h3 className="font-semibold text-indigo-800 mb-2">Er du et produksjonsselskap?</h3>
-                <p className="text-sm text-indigo-700 mb-3">Få tilgang til tusener av potensielle reality-deltakere som er klare for ditt neste show!</p>
-                <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg text-sm font-medium transition-colors">
-                  Registrer ditt selskap
-                </button>
-              </div>
             </div>
           </div>
         </div>

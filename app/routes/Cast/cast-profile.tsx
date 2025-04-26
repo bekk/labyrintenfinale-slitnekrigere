@@ -107,7 +107,7 @@ export default function CastProfile() {
 
   return (
     <div className="container mx-auto py-8 px-4">
-      <div className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+      <div className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg text-black">
         <h1 className="text-3xl font-bold text-center mb-8 text-orange-600">Edit Your Profile</h1>
 
         <form onSubmit={handleSubmit} className="space-y-10">

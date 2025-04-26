@@ -66,7 +66,7 @@ export default function CastRegisterPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate("/producer-main");
+    navigate("/cast");
   };
 
   return (

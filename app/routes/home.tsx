@@ -56,7 +56,7 @@ export default function Home() {
           {/* Two-column registration layout */}
           <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
             {/* User Registration */}
-            <div className="flex-1 bg-white bg-opacity-95 backdrop-filter backdrop-blur-sm p-8 rounded-xl shadow-lg border border-orange-100 transform transition-transform hover:scale-105 duration-300">
+            <div className="flex-1 bg-white bg-opacity-95 backdrop-filter backdrop-blur-sm p-8 rounded-xl shadow-lg border border-orange-100 transform transition-transform hover:scale-105 duration-300 text-black">
               <div className="text-center mb-6">
                 <div className="inline-block p-3 bg-orange-100 rounded-full mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-orange-600" viewBox="0 0 20 20" fill="currentColor">
@@ -95,7 +95,7 @@ export default function Home() {
             </div>
 
             {/* Company Registration */}
-            <div className="flex-1 bg-white bg-opacity-95 backdrop-filter backdrop-blur-sm p-8 rounded-xl shadow-lg border border-orange-100 transform transition-transform hover:scale-105 duration-300">
+            <div className="flex-1 bg-white bg-opacity-95 backdrop-filter backdrop-blur-sm p-8 rounded-xl shadow-lg border border-orange-100 transform transition-transform hover:scale-105 duration-300 text-black">
               <div className="text-center mb-6">
                 <div className="inline-block p-3 bg-orange-200 rounded-full mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-orange-700" viewBox="0 0 20 20" fill="currentColor">

@@ -22,13 +22,14 @@ export default function Home() {
   return (
     <>
       <div className="pt-16 p-4 container mx-auto">
+        <h1 className="text-3xl font-bold mb-6 text-center">Vår flotte sindre</h1>
         
         {/* Featured Image Carousel */}
         <div className="mb-10 rounded-lg overflow-hidden shadow-xl">
           <ImageCarousel 
             images={featuredImages}
             height="300px"
-            autoPlayInterval={400}
+            autoPlayInterval={2000}
           />
         </div>
         

@@ -12,23 +12,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    // Random color blinking effect
-    const getRandomColor = () => {
-      const letters = '0123456789ABCDEF';
-      let color = '#';
-      for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    };
-
-    const blinkInterval = setInterval(() => {
-      document.body.style.backgroundColor = getRandomColor();
-    }, 100); // Change color every 100ms for fast blinking
-
-    return () => clearInterval(blinkInterval);
-  }, []);
+  
 
   return (
     <html lang="en">

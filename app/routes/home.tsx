@@ -175,9 +175,24 @@ export default function Home() {
 
       {/* Help Button */}
       <div className="fixed right-10 bottom-10">
+      <div className="absolute right-10 bottom-30">
         <ButtonWithIcon
           text="Help"
           onClick={() => navigate("/help")}
+          icon={<QuestionMarkIcon />}
+        />
+      </div>
+      <div className="absolute right-10 bottom-20">
+        <ButtonWithIcon
+          text="user login"
+          onClick={() => navigate("/user-login", { state: { loginType: "user" } })}
+          icon={<QuestionMarkIcon />}
+        />
+      </div>
+      <div className="absolute right-10 bottom-10">
+        <ButtonWithIcon
+          text="producer login"
+          onClick={() => navigate("/producer-login", { state: { loginType: "user" } })}
           icon={<QuestionMarkIcon />}
         />
       </div>

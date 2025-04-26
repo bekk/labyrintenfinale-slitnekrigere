@@ -17,6 +17,10 @@ export default function Home() {
         <NavLink to="/more-info">
           <a className="text-blue-600 underline hover:text-blue-800">Du kan finne mer info her</a>
         </NavLink>
+        <br />
+        <NavLink to="/inspomain">
+          <a className="text-blue-600 underline hover:text-blue-800">Du kan finne mer iinspo her</a>
+        </NavLink>
       </div>
       <div className="absolute right-10 bottom-10">
         <ButtonWithIcon

@@ -30,18 +30,34 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section with Image Background */}
-      <div className="relative pt-28 pb-80 overflow-hidden">
-        {/* Full background image with overlay */}
+      {/* Hero Section with Composite Background */}
+      <div className="relative pt-28 pb-20 overflow-hidden">
+        {/* Composite background with two images */}
         <div className="absolute inset-0 z-0">
+          {/* Left side image */}
           <div 
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute top-0 left-0 bottom-0 w-1/2 bg-cover"
             style={{
-              backgroundImage: "url('https://sdmntpritalynorth.oaiusercontent.com/files/00000000-4f30-6246-b20a-0e0c361bd516/raw?se=2025-04-26T10%3A04%3A31Z&sp=r&sv=2024-08-04&sr=b&scid=2380e4ea-e256-52a5-9125-0f7c347bd171&skoid=9370dd2b-ca43-4270-bed5-18b1b71f8fa0&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-26T06%3A32%3A23Z&ske=2025-04-27T06%3A32%3A23Z&sks=b&skv=2024-08-04&sig=l7EVqJGe2Qr9cfodys%2BvK4jpnFuQ0UcoATXQeRolAbE%3D')"
+              backgroundImage: "url('/images/hero1.png')",
+              clipPath: 'polygon(0 0, 100% 0, 50.1% 100%, 0 100%)',
+              width: '70%',
+              right: '0',
+              backgroundPosition: 'center top', /* Position from top */
+              top: '-24px' /* Offset to account for navbar */
             }}
           ></div>
           
-        </div>
+          {/* Right side image */}
+          <div 
+            className="absolute top-0 right-0 bottom-0 w-1/2 bg-cover bg-center"
+            style={{
+              backgroundImage: "url('/images/hero2.jpeg')",
+              clipPath: 'polygon(49.9% 0, 100% 0, 100% 100%, 0 100%)',
+              width: '100%',
+              left: '140px'
+            }}
+          ></div>
+                  </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
@@ -196,6 +212,8 @@ export default function Home() {
           icon={<QuestionMarkIcon />}
         />
       </div>
+    
+    </div>
     </>
   );
 }

@@ -3,9 +3,10 @@ import ShowBox from "../components/showBox/showBox";
 import { NavLink, useNavigate } from "react-router";
 
 const items = [
-  { title: "Cats", imageUrl: "https://placekitten.com/300/200" },
-  { title: "Dogs", imageUrl: "https://placedog.net/300/200" },
-  { title: "Birds", imageUrl: "https://placebear.com/300/200" },
+  { title: "Boksen", imageUrl: "https://sumo.cdn.tv2.no/imageapi/v3/img/676148ef498e56639cd697a5-1738138927014" },
+  { title: "Spillet", imageUrl: "https://sumo.cdn.tv2.no/imageapi/v3/img/67b2ef23498eadb12026cf37-1745556784700" },
+  { title: "71 Grader Nord", imageUrl: "https://eu1-prod-images.disco-api.com/2022/08/19/869953bd-2e1c-406d-87ee-7b037465d5fc.jpeg?w=1200&f=JPG&p=true&q=60" },
+  { title: "Farmen", imageUrl: "https://sumo.cdn.tv2.no/imageapi/v3/img/5fc546af498e70bbdd3b3b3c-1700654221807" },
 ];
 
 function goToQuestions(goTo: (a: string) => void) {

@@ -9,4 +9,5 @@ export default [
   route("/producer-login", "routes/producerLogin.tsx"),
   route("/producer-main", "routes/producer-main.tsx"),
   route("/swipe/:title", "routes/producer-swipe.tsx"),
+  route("/make-questions", "routes/producer-make-questions.tsx"),
 ] satisfies RouteConfig;

@@ -49,10 +49,24 @@ export default function Home() {
           </NavLink>
         </div>
       </div>
-      <div className="absolute right-10 bottom-10">
+      <div className="absolute right-10 bottom-30">
         <ButtonWithIcon
           text="Hjelp"
           onClick={() => navigate("/hjelp")}
+          icon={<QuestionMarkIcon />}
+        />
+      </div>
+      <div className="absolute right-10 bottom-20">
+        <ButtonWithIcon
+          text="user login"
+          onClick={() => navigate("/user-login", { state: { loginType: "user" } })}
+          icon={<QuestionMarkIcon />}
+        />
+      </div>
+      <div className="absolute right-10 bottom-10">
+        <ButtonWithIcon
+          text="producer login"
+          onClick={() => navigate("/producer-login", { state: { loginType: "user" } })}
           icon={<QuestionMarkIcon />}
         />
       </div>

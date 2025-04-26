@@ -8,4 +8,6 @@ export default [
   route("/login", "routes/login.tsx"),
   route("/register", "routes/cast-register.tsx"),
   route("/prod-register", "routes/prod-register.tsx"),
+
+  route("/cast/*", "routes/cast-homepage.tsx"),
 ] satisfies RouteConfig;

@@ -11,6 +11,7 @@ const login: React.FC = () => {
     console.log("Password:", password);
 
     //Navigate to cast/prod page
+    navigate("/cast/browse");
   };
 
   return (

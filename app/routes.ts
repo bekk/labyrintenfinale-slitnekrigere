@@ -5,4 +5,5 @@ export default [
   route("/hjelp" ,"routes/help.tsx"),
   route("/more-info", "routes/more-info.tsx"),
   route("/inspomain", "routes/inspomain.tsx"),
+  route("/login", "routes/login.tsx"),
 ] satisfies RouteConfig;

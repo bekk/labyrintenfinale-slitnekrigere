@@ -126,7 +126,7 @@ export default function Home() {
                 </li>
               </ul>
               <button 
-                onClick={() => navigate("producer-login")}
+                onClick={() => navigate("prod-register")}
                 className="w-full py-3 bg-orange-700 text-white rounded-lg hover:bg-orange-800 transition-colors transform hover:-translate-y-1 duration-300"
               >
                 Sign up as Company

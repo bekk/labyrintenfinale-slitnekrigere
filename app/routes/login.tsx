@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import Login from "../components/LoginPage/LoginPage";
 
-const userLogin: React.FC = () => {
+const login: React.FC = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (email: string, password: string) => {
@@ -20,4 +20,4 @@ const userLogin: React.FC = () => {
   );
 };
 
-export default userLogin;
+export default login;

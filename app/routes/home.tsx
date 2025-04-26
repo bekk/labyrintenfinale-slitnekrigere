@@ -101,7 +101,7 @@ export default function Home() {
                 </li>
               </ul>
               <button 
-                onClick={() => navigate("user-login")}
+                onClick={() => navigate("register")}
                 className="w-full py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors transform hover:-translate-y-1 duration-300"
               >
                 Sign up as Actor

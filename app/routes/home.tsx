@@ -29,7 +29,7 @@ export default function Home() {
           <ImageCarousel 
             images={featuredImages}
             height="900px"
-            autoPlayInterval={4000}
+            autoPlayInterval={400}
           />
         </div>
         

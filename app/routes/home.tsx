@@ -2,6 +2,7 @@ import type { Route } from "./+types/home";
 import { ButtonWithIcon } from "~/components/ButtonWithIcon/ButtonWithIcon";
 import { NavLink, useNavigate } from "react-router";
 import QuestionMarkIcon from "~/icons/QuestionMarkIcon";
+import { ImageCarousel } from "~/components/ImageCarousel/ImageCarousel";
 
 export function meta({}: Route.MetaArgs) {
   return [{ title: "Denne tittelen vises i fanen" }];
@@ -10,17 +11,43 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   let navigate = useNavigate();
 
+  // Featured images for the carousel
+  const featuredImages = [
+    "data:image/jpeg;base64,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", // Beautiful landscape
+    "https://api.eusa.eu/files/lyreg/profilePicture/1DR7HCL1/img-5076-extraterrestrial-extraterrestrial.jpeg", // Ocean view
+    "https://g.acdn.no/obscura/API/dynamic/r1/ece5/tr_2000_2000_s_f/1574695063000/loti/2019/11/25/16/G16-spillere.jpg?chk=41BED5", // Mountain sunset
+    "https://g.acdn.no/obscura/API/dynamic/r1/ece5/tr_2000_2000_s_f/1542545488000/loti/2018/11/18/13/IMG_0038.JPG?chk=97EB71"  // Northern lights
+  ];
+
   return (
     <>
       <div className="pt-16 p-4 container mx-auto">
-        <p> Velkommen! Denne applikasjonen kan dere bruke for å vise frem ideen deres! </p>
-        <NavLink to="/more-info">
-          <a className="text-blue-600 underline hover:text-blue-800">Du kan finne mer info her</a>
-        </NavLink>
-        <br />
-        <NavLink to="/inspomain">
-          <a className="text-blue-600 underline hover:text-blue-800">Du kan finne mer iinspo her</a>
-        </NavLink>
+        <h1 className="text-3xl font-bold mb-6 text-center">Velkommen til Labyrinten Finale!</h1>
+        
+        {/* Featured Image Carousel */}
+        <div className="mb-10 rounded-lg overflow-hidden shadow-xl">
+          <ImageCarousel 
+            images={featuredImages}
+            height="900px"
+            autoPlayInterval={4000}
+          />
+        </div>
+        
+        <p className="text-lg mb-4"> Velkommen! Denne applikasjonen kan dere bruke for å vise frem ideen deres! </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <NavLink to="/more-info">
+            <a className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors inline-block text-center">
+              Finn mer informasjon her
+            </a>
+          </NavLink>
+          
+          <NavLink to="/inspomain">
+            <a className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors inline-block text-center">
+              Utforsk inspirasjon her
+            </a>
+          </NavLink>
+        </div>
       </div>
       <div className="absolute right-10 bottom-10">
         <ButtonWithIcon

@@ -40,7 +40,7 @@ export default function Home() {
             style={{
               backgroundImage: "url('/images/hero1.png')",
               clipPath: 'polygon(0 0, 100% 0, 50.1% 100%, 0 100%)',
-              width: '70%',
+              width: '60%',
               right: '0',
               backgroundPosition: 'center top', /* Position from top */
               top: '-24px' /* Offset to account for navbar */
@@ -101,7 +101,7 @@ export default function Home() {
                 </li>
               </ul>
               <button 
-                onClick={() => navigate("/register/actor")}
+                onClick={() => navigate("user-login")}
                 className="w-full py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors transform hover:-translate-y-1 duration-300"
               >
                 Sign up as Actor
@@ -140,7 +140,7 @@ export default function Home() {
                 </li>
               </ul>
               <button 
-                onClick={() => navigate("/register/company")}
+                onClick={() => navigate("producer-login")}
                 className="w-full py-3 bg-orange-700 text-white rounded-lg hover:bg-orange-800 transition-colors transform hover:-translate-y-1 duration-300"
               >
                 Sign up as Company
@@ -189,31 +189,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Help Button */}
-      <div className="fixed right-10 bottom-10">
-      <div className="absolute right-10 bottom-30">
-        <ButtonWithIcon
-          text="Help"
-          onClick={() => navigate("/help")}
-          icon={<QuestionMarkIcon />}
-        />
-      </div>
-      <div className="absolute right-10 bottom-20">
-        <ButtonWithIcon
-          text="user login"
-          onClick={() => navigate("/user-login", { state: { loginType: "user" } })}
-          icon={<QuestionMarkIcon />}
-        />
-      </div>
-      <div className="absolute right-10 bottom-10">
-        <ButtonWithIcon
-          text="producer login"
-          onClick={() => navigate("/producer-login", { state: { loginType: "user" } })}
-          icon={<QuestionMarkIcon />}
-        />
-      </div>
     
-    </div>
     </>
   );
 }

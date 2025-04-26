@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "~/components/Navbar/Navbar";
 import Footer from "~/components/Footer/Footer";
+import { useNavigate } from "react-router";
 
 // Data model for a producer
 export interface ProducerData {
@@ -15,13 +16,8 @@ export interface ProducerData {
   description?: string;
 }
 
-// Props for the register page wrapper
-interface ProducerRegisterPageProps {
-  handleRegister: (data: ProducerData) => void;
-}
-
 // Page component to wrap the registration form
-const ProducerRegisterPage: React.FC<ProducerRegisterPageProps> = ({ handleRegister }) => (
+const ProducerRegisterPage: React.FC = () => (
   <div className="flex flex-col min-h-screen bg-gradient-to-b from-orange-50 via-white to-orange-50">
     <Navbar />
     <main className="flex-grow flex items-center justify-center px-4 py-12">
@@ -29,20 +25,16 @@ const ProducerRegisterPage: React.FC<ProducerRegisterPageProps> = ({ handleRegis
         <h1 className="text-3xl font-semibold text-center text-orange-600 mb-8">
           Producer Registration
         </h1>
-        <ProducerRegisterForm handleRegister={handleRegister} />
+        <ProducerRegisterForm />
       </div>
     </main>
     <Footer />
   </div>
 );
 
-// Props for the form itself
-interface ProducerRegisterFormProps {
-  handleRegister: (data: ProducerData) => void;
-}
-
 // Registration form component (no fields are required for prototype)
-const ProducerRegisterForm: React.FC<ProducerRegisterFormProps> = ({ handleRegister }) => {
+const ProducerRegisterForm: React.FC = () => {
+  let navigate = useNavigate();
   const [form, setForm] = React.useState<ProducerData>({
     fullName: "",
     email: "",
@@ -62,7 +54,7 @@ const ProducerRegisterForm: React.FC<ProducerRegisterFormProps> = ({ handleRegis
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    handleRegister(form);
+    navigate("/producer-main");
   };
 
   const fields = [

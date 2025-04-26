@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router";
 import CastNavbar from "~/components/Navbar/cast-navbar";
 import Footer from "~/components/Footer/Footer";
 import CastBrowse from "./Cast/cast-browse";

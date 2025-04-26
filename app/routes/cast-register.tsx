@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "~/components/Navbar/Navbar";
 import Footer from "~/components/Footer/Footer";
+import { useNavigate } from "react-router";
 
 const tvShows = [
   "Ex on the Beach",
@@ -17,6 +18,7 @@ const tvShows = [
 const civilStatuses = ["Single", "Married", "Divorced", "Widowed"];
 
 export default function CastRegisterPage() {
+  let navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     birthdate: "",
@@ -64,7 +66,7 @@ export default function CastRegisterPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Prototype form data:", formData);
+    navigate("/producer-main");
   };
 
   return (
@@ -74,7 +76,7 @@ export default function CastRegisterPage() {
         <div className="max-w-3xl mx-auto bg-white p-10 rounded-xl shadow-lg space-y-12">
           <h1 className="text-3xl font-bold text-center text-orange-600">Register as Cast</h1>
 
-          <form onSubmit={handleSubmit} className="space-y-10">
+          <form onSubmit={handleSubmit} className="space-y-10 text-black">
             {/* Personal Info Section */}
             <section className="space-y-6">
               <h2 className="text-xl font-semibold border-b pb-2">Basic Personal Info</h2>

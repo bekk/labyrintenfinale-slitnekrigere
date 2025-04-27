@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Navigate, NavLink, useParams } from "react-router-dom";
 import ProdNavbar from "~/components/Navbar/prod-navbar";
 import Footer from "~/components/Footer/Footer";
 import ProjectSwipe from "./producer-swipe";
+import { NavLink, useNavigate } from "react-router";
+
 
 // Mock data interfaces
 interface Project {
@@ -142,12 +143,24 @@ export default function ProducerHomepage() {
         
         {/* Main Content */}
         <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<DashboardContent projects={projects} isLoading={isLoading} />} />
-            <Route path="/swipe/:projectId" element={<ProjectSwipe />} />
-            <Route path="/profile" element={<ProducerProfile />} />
-            <Route path="*" element={<Navigate to="/producer" replace />} />
-          </Routes>
+            {/* Main content conditional rendering */}
+            {(() => {
+            // Extract path from URL if needed
+            const path = window.location.pathname;
+            const projectId = path.startsWith('/producer/swipe/') 
+              ? path.replace('/producer/swipe/', '') 
+              : null;
+            
+            // Render appropriate content based on path
+            if (path.includes('/producer/swipe/') && projectId) {
+              return <ProjectSwipe projectId={projectId} />;
+            } else if (path.includes('/producer/profile')) {
+              return <ProducerProfile />;
+            } else {
+              // Default view is dashboard
+              return <DashboardContent projects={projects} isLoading={isLoading} />;
+            }
+            })()}
         </main>
       </div>
       <Footer />

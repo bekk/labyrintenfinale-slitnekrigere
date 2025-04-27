@@ -20,7 +20,6 @@ const LoginPage: React.FC<LoginPageProps> = ({ handleSubmit }) => {
           <LoginForm handleSubmit={handleSubmit} />
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

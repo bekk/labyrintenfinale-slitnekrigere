@@ -43,9 +43,11 @@ export default function ProdNavbar() {
             >
               Company Profile
             </NavLink>
-            <button className="bg-white text-orange-700 px-4 py-2 rounded-lg hover:bg-orange-100 transition ml-4">
-              Logout
-            </button>
+            <NavLink to={"/"}>
+                <button className="bg-white text-orange-700 px-4 py-2 rounded-lg hover:bg-orange-100 transition ml-4">
+                Logout
+                </button>
+            </NavLink>
           </div>
 
           {/* Mobile Menu Button */}

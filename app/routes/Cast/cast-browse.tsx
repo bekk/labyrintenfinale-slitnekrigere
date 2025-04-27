@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 
 interface ShowCard {
   id: number;
@@ -9,7 +10,12 @@ interface ShowCard {
   isActive: boolean;
 }
 
+function routeTo(name: string, goTo: (a: string) => void) {
+  goTo(name);
+}
+
 export default function CastBrowse() {
+  let navigate = useNavigate();
   const [shows, setShows] = useState<ShowCard[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
@@ -173,8 +179,9 @@ export default function CastBrowse() {
                   ))}
                 </div>
                 
-                <button className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 rounded-lg transition">
-                  View Details
+                <button className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 rounded-lg transition"
+                    onClick={() => routeTo(show.title, navigate)}>
+                  Påmelding
                 </button>
               </div>
             </div>

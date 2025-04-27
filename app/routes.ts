@@ -13,4 +13,5 @@ export default [
   route("/prod-register", "routes/prod-register.tsx"),
 
   route("/cast/*", "routes/cast-homepage.tsx"),
+  route("/cast/browse/:title", "routes/Cast/cast-send-resume.tsx")
 ] satisfies RouteConfig;

@@ -82,7 +82,7 @@ export default function ProducerHomepage() {
         {/* Project Sidebar */}
         <aside className="w-full md:w-64 bg-gray-50 border-r border-gray-200 overflow-y-auto">
           <div className="p-4 border-b border-gray-200 bg-white">
-            <h2 className="text-lg font-bold text-gray-800">Your Projects</h2>
+            <h2 className="text-lg font-bold text-gray-800">Dine Prosjekter</h2>
           </div>
           
           {isLoading ? (
@@ -117,14 +117,14 @@ export default function ProducerHomepage() {
                           : "bg-gray-100 text-gray-800"
                       }`}
                     >
-                      {project.status === "active" ? "Active" : 
-                       project.status === "planning" ? "Planning" : "Completed"}
+                      {project.status === "active" ? "Aktiv" : 
+                       project.status === "planning" ? "Planlegging" : "Fullført"}
                     </span>
                   </div>
                   <div className="mt-1 flex items-center text-sm text-gray-500">
-                    <span>{project.applicants} applicants</span>
+                    <span>{project.applicants} søknader</span>
                     <span className="mx-1">•</span>
-                    <span>{project.matches} matches</span>
+                    <span>{project.matches} matcher</span>
                   </div>
                 </NavLink>
               ))}
@@ -179,7 +179,7 @@ function DashboardContent({ projects, isLoading }: { projects: Project[], isLoad
   // Stat cards data
   const statCards: StatCard[] = [
     {
-      title: "Total Applicants",
+      title: "Totalt antall søknader",
       value: totalApplicants,
       change: 12.5,
       icon: (
@@ -189,7 +189,7 @@ function DashboardContent({ projects, isLoading }: { projects: Project[], isLoad
       )
     },
     {
-      title: "Potential Matches",
+      title: "Potensielle matcher",
       value: totalMatches,
       change: 8.2,
       icon: (
@@ -199,7 +199,7 @@ function DashboardContent({ projects, isLoading }: { projects: Project[], isLoad
       )
     },
     {
-      title: "Active Projects",
+      title: "Aktive prosjekter",
       value: activeProjects,
       change: 0,
       icon: (
@@ -209,7 +209,7 @@ function DashboardContent({ projects, isLoading }: { projects: Project[], isLoad
       )
     },
     {
-      title: "Conversion Rate",
+      title: "Konverteringsrate",
       value: Math.round((totalMatches / totalApplicants) * 100),
       change: -2.3,
       icon: (
@@ -231,8 +231,8 @@ function DashboardContent({ projects, isLoading }: { projects: Project[], isLoad
   return (
     <div className="p-6 md:p-10">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Producer Dashboard</h1>
-        <p className="text-gray-600 mt-1">Welcome back! Here's what's happening with your projects.</p>
+        <h1 className="text-3xl font-bold text-gray-900">Produsentdashbord</h1>
+        <p className="text-gray-600 mt-1">Velkommen tilbake! Slik går det med prosjektene dine.</p>
       </div>
 
       {/* Stats Overview */}
@@ -266,16 +266,16 @@ function DashboardContent({ projects, isLoading }: { projects: Project[], isLoad
 
       {/* Projects Overview */}
       <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 mb-8">
-        <h2 className="text-lg font-semibold text-gray-800 mb-4">Projects Overview</h2>
+        <h2 className="text-lg font-semibold text-gray-800 mb-4">Prosjektoverblikk</h2>
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Project</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Prosjekt</th>
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Applicants</th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Matches</th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Søknader</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Matcher</th>
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Handlinger</th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
@@ -307,7 +307,7 @@ function DashboardContent({ projects, isLoading }: { projects: Project[], isLoad
                       to={`/producer/swipe/${project.id}`}
                       className="text-orange-600 hover:text-orange-900"
                     >
-                      View
+                      Vis
                     </NavLink>
                   </td>
                 </tr>
@@ -319,7 +319,7 @@ function DashboardContent({ projects, isLoading }: { projects: Project[], isLoad
 
       {/* Recent Activity */}
       <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-        <h2 className="text-lg font-semibold text-gray-800 mb-4">Recent Activity</h2>
+        <h2 className="text-lg font-semibold text-gray-800 mb-4">Nylig aktivitet</h2>
         <div className="space-y-4">
           {[1, 2, 3, 4].map((_, i) => (
             <div key={i} className="flex items-start border-b border-gray-100 pb-4">
@@ -330,12 +330,12 @@ function DashboardContent({ projects, isLoading }: { projects: Project[], isLoad
               </div>
               <div className="ml-4">
                 <p className="text-sm text-gray-800">
-                  {i === 0 ? 'New application for Paradise Hotel 2025 from Thomas B.' :
-                   i === 1 ? 'You marked 5 candidates as potential matches for Farmen 2026' :
-                   i === 2 ? 'Added new project "71° Nord 2025"' :
-                   'System detected 8 new high-match candidates for Kompani Lauritzen'}
+                  {i === 0 ? 'Ny søknad til Paradise Hotel 2025 fra Thomas B.' :
+                   i === 1 ? 'Du markerte 5 kandidater som potensielle matcher for Farmen 2026' :
+                   i === 2 ? 'La til nytt prosjekt "71° Nord 2025"' :
+                   'Systemet oppdaget 8 nye høy-match-kandidater for Kompani Lauritzen'}
                 </p>
-                <p className="text-xs text-gray-500 mt-1">{i === 0 ? '23 minutes ago' : i === 1 ? '2 hours ago' : i === 2 ? 'Yesterday' : '2 days ago'}</p>
+                <p className="text-xs text-gray-500 mt-1">{i === 0 ? '23 minutter siden' : i === 1 ? '2 timer siden' : i === 2 ? 'I går' : 'For 2 dager siden'}</p>
               </div>
             </div>
           ))}
@@ -349,8 +349,8 @@ function DashboardContent({ projects, isLoading }: { projects: Project[], isLoad
 function ProducerProfile() {
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-bold mb-4">Company Profile</h1>
-      <p>Profile editing functionality would go here, similar to the cast profile edit form.</p>
+      <h1 className="text-2xl font-bold mb-4">Selskapsprofil</h1>
+      <p>Her kan du redigere firmaprofilen din, tilsvarende redigeringsskjemaet for skuespillerprofil.</p>
     </div>
   );
 }

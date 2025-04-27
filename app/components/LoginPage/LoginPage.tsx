@@ -72,13 +72,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ handleSubmit, handleProdSubmit })
         type="submit"
         className="w-full py-3 bg-orange-600 text-white font-medium rounded-xl hover:bg-orange-700 transition-all duration-200"
       >
-        User Log In
+        Bruker Log In
       </button>
       <button onClick={() => {handleProdSubmit(email, password);}}
         type="submit"
         className="w-full py-3 bg-orange-600 text-white font-medium rounded-xl hover:bg-orange-700 transition-all duration-200"
       >
-        Producer Log In
+        Produsent Log In
       </button>
     </form>
   );

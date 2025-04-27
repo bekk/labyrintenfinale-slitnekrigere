@@ -6,7 +6,7 @@ export default [
   route("/more-info", "routes/more-info.tsx"),
   route("/inspomain", "routes/inspomain.tsx"),
   route("/producer-main", "routes/producer-main.tsx"),
-  route("/swipe/:title", "routes/producer-swipe.tsx"),
+  route("/producer/swipe/:title", "routes/prod-homepage.tsx"),
   route("/make-questions", "routes/producer-make-questions.tsx"),
   route("/login", "routes/login.tsx"),
   route("/register", "routes/cast-register.tsx"),

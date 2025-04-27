@@ -5,10 +5,11 @@ import Footer from "~/components/Footer/Footer";
 // Props for the page-level component
 interface LoginPageProps {
   handleSubmit: (email: string, password: string) => void;
+  handleProdSubmit: (email: string, password: string) => void;
 }
 
 // Page-level component accepts handleSubmit and renders layout
-const LoginPage: React.FC<LoginPageProps> = ({ handleSubmit }) => {
+const LoginPage: React.FC<LoginPageProps> = ({ handleSubmit, handleProdSubmit }) => {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-orange-50 via-white to-orange-50">
       <Navbar />
@@ -17,7 +18,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ handleSubmit }) => {
           <h1 className="text-3xl font-semibold text-center text-orange-600 mb-6">
             Welcome Back
           </h1>
-          <LoginForm handleSubmit={handleSubmit} />
+          <LoginForm handleSubmit={handleSubmit} handleProdSubmit={handleProdSubmit} />
         </div>
       </main>
     </div>
@@ -27,19 +28,20 @@ const LoginPage: React.FC<LoginPageProps> = ({ handleSubmit }) => {
 // Form component handles input state and triggers handleSubmit
 interface LoginFormProps {
   handleSubmit: (email: string, password: string) => void;
+  handleProdSubmit: (email: string, password: string) => void;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ handleSubmit }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ handleSubmit, handleProdSubmit }) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    handleSubmit(email, password);
-  };
+//   const onSubmit = (e: React.FormEvent) => {
+//     e.preventDefault();
+//     handleSubmit(email, password);
+//   };
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6">
+    <form className="space-y-6">
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
           Email
@@ -66,11 +68,17 @@ const LoginForm: React.FC<LoginFormProps> = ({ handleSubmit }) => {
           className="mt-1 block w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 text-gray-900 bg-white"
         />
       </div>
-      <button
+      <button onClick={() => {handleSubmit(email, password);}}
         type="submit"
         className="w-full py-3 bg-orange-600 text-white font-medium rounded-xl hover:bg-orange-700 transition-all duration-200"
       >
-        Log In
+        User Log In
+      </button>
+      <button onClick={() => {handleProdSubmit(email, password);}}
+        type="submit"
+        className="w-full py-3 bg-orange-600 text-white font-medium rounded-xl hover:bg-orange-700 transition-all duration-200"
+      >
+        Producer Log In
       </button>
     </form>
   );

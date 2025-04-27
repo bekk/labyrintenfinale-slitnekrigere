@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 
 function goBack(goTo: (a: string) => void) {
-    goTo("/producer-main");
+    goTo("/producer");
 }
 
 const AddContentPage: React.FC = () => {

@@ -24,11 +24,7 @@ const login: React.FC = () => {
     <>
       <Navbar />
       <div>
-        <Login handleSubmit={handleSubmit} />
-        <button 
-          className="w-full py-3 bg-orange-600 text-white font-medium rounded-xl hover:bg-orange-700 transition-all duration-200" onClick={handleProdSubmit}>
-          Producer Login
-        </button>
+        <Login handleSubmit={handleSubmit} handleProdSubmit={handleProdSubmit} />
       </div>
       <Footer />
     </>

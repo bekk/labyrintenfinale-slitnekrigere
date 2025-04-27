@@ -38,7 +38,7 @@ const SwipePage: React.FC = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-  const allTags = ["Cute", "Funny", "Serious", "Adventurous", "Sleepy"];
+  const allTags = ["Adventurous", "Funny", "Sleepy", "Male", "Female", "Short", "Tall"];
 
   // Removes the top tile when any button is clicked
   const handleTileAction = (color: string) => {

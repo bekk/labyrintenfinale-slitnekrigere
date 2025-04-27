@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 
 interface ShowCard {
   id: number;
@@ -9,7 +10,12 @@ interface ShowCard {
   isActive: boolean;
 }
 
+function routeTo(name: string, goTo: (a: string) => void) {
+  goTo(name);
+}
+
 export default function CastBrowse() {
+  let navigate = useNavigate();
   const [shows, setShows] = useState<ShowCard[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
@@ -106,11 +112,11 @@ export default function CastBrowse() {
 
       {/* Tag filters */}
       <div className="mb-8">
-        <h2 className="text-lg font-semibold mb-3">Filter by category:</h2>
+        <h2 className="text-lg font-semibold mb-3 text-black">Filter by category:</h2>
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setActiveFilter(null)}
-            className={`px-4 py-2 rounded-full text-sm ${
+            className={`px-4 py-2 rounded-full text-sm cursor-pointer ${
               activeFilter === null
                 ? "bg-orange-600 text-white"
                 : "bg-gray-100 text-gray-800 hover:bg-gray-200"
@@ -122,7 +128,7 @@ export default function CastBrowse() {
             <button
               key={tag}
               onClick={() => setActiveFilter(tag)}
-              className={`px-4 py-2 rounded-full text-sm ${
+              className={`px-4 py-2 rounded-full text-sm cursor-pointer ${
                 activeFilter === tag
                   ? "bg-orange-600 text-white"
                   : "bg-gray-100 text-gray-800 hover:bg-gray-200"
@@ -173,8 +179,9 @@ export default function CastBrowse() {
                   ))}
                 </div>
                 
-                <button className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 rounded-lg transition">
-                  View Details
+                <button className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 rounded-lg transition cursor-pointer"
+                    onClick={() => routeTo(show.title, navigate)}>
+                  Påmelding
                 </button>
               </div>
             </div>

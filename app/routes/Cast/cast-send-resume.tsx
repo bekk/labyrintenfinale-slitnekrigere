@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import NavigationButton from "~/components/navigationButton/navigationButton"
+import NavigationX from "~/components/navigationButton/navigationX"
 
 const SimpleQuestionPage: React.FC = () => {
   const [answer1, setAnswer1] = useState("");
@@ -15,7 +15,7 @@ const { title } = useParams<{ title: string }>();
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
-        <NavigationButton text="X" path="/cast/browse" className="absolute top-5 left-5 text-gray-700 text-xl text-md font-bold cursor-pointer"/>
+        <NavigationX text="X" path="/cast/browse" />
       <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
         <h1 className="text-xl font-bold mb-6 text-center text-gray-800">Påmelding til {title}:</h1>
 

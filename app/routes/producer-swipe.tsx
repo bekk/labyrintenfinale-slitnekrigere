@@ -9,7 +9,7 @@ const SwipePage: React.FC = () => {
     {
       title: "Olav Bulkestad",
       imageUrl: "/images/olavbekk.png",
-      description: "Elsker å løfte tungt. hard carry",
+      description: "Elsker å løfte tungt. BEKKday 5 dager i uka. Work-workout balanse er viktig.",
       gender: "Male",
       age: 44,
       height: "185 cm",

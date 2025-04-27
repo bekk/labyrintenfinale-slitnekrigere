@@ -54,7 +54,7 @@ const ProducerRegisterForm: React.FC = () => {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate("/producer-main");
+    navigate("/producer/");
   };
 
   const fields = [

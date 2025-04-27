@@ -79,13 +79,13 @@ export default function CastRegisterPage() {
           <form onSubmit={handleSubmit} className="space-y-10 text-black">
             {/* Personal Info Section */}
             <section className="space-y-6">
-              <h2 className="text-xl font-semibold border-b pb-2">Basic Personal Info</h2>
+              <h2 className="text-xl font-semibold border-b pb-2">Grunnlegende personalia</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
-                  placeholder="Full Name"
+                  placeholder="Fullt navn"
                   className="w-full p-4 border rounded-md focus:ring-2 focus:ring-orange-300"
                 />
                 <input
@@ -99,11 +99,11 @@ export default function CastRegisterPage() {
                   name="location"
                   value={formData.location}
                   onChange={handleChange}
-                  placeholder="Location"
+                  placeholder="Oppholdssted"
                   className="w-full p-4 border rounded-md focus:ring-2 focus:ring-orange-300"
                 />
                 <div className="flex flex-col">
-                  <label className="mb-2 font-semibold text-gray-700">Gender</label>
+                  <label className="mb-2 font-semibold text-gray-700">Kjønn</label>
                   <div className="flex gap-6">
                     {['Male','Female','Other'].map(g => (
                       <label key={g} className="flex items-center gap-2">
@@ -121,7 +121,7 @@ export default function CastRegisterPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="block mb-2 font-semibold text-gray-700">Civil Status</label>
+                  <label className="block mb-2 font-semibold text-gray-700">Sivilstatus</label>
                   <select
                     name="civilStatus"
                     value={formData.civilStatus}
@@ -142,28 +142,28 @@ export default function CastRegisterPage() {
               <h2 className="text-xl font-semibold border-b pb-2">Tell Us More About You</h2>
               <textarea
                 name="aboutMe"
-                placeholder="Who are you?"
+                placeholder="Hvem er du?"
                 value={formData.aboutMe}
                 onChange={handleChange}
                 className="w-full p-4 border rounded-md min-h-[120px] focus:ring-2 focus:ring-orange-300"
               />
               <textarea
                 name="experience"
-                placeholder="Previous acting, modeling, or stage experience"
+                placeholder="Tidligere erfaringer (hvis noen)"
                 value={formData.experience}
                 onChange={handleChange}
                 className="w-full p-4 border rounded-md min-h-[120px] focus:ring-2 focus:ring-orange-300"
               />
               <textarea
                 name="dreamRole"
-                placeholder="Your dream role"
+                placeholder="Drømmerolle"
                 value={formData.dreamRole}
                 onChange={handleChange}
                 className="w-full p-4 border rounded-md min-h-[100px] focus:ring-2 focus:ring-orange-300"
               />
               <textarea
                 name="funFact"
-                placeholder="Fun fact about yourself (optional)"
+                placeholder="Fun fact om deg selv"
                 value={formData.funFact}
                 onChange={handleChange}
                 className="w-full p-4 border rounded-md min-h-[100px] focus:ring-2 focus:ring-orange-300"

@@ -32,7 +32,7 @@ export default function ProdNavbar() {
                   : "text-white hover:text-orange-200 px-3 py-2"
               }
             >
-              Dashboard
+              Oversikt
             </NavLink>
             <NavLink 
               to="/producer/profile" 
@@ -42,11 +42,11 @@ export default function ProdNavbar() {
                   : "text-white hover:text-orange-200 px-3 py-2"
               }
             >
-              Company Profile
+              Selskapssprofil
             </NavLink>
             <NavLink to={"/"}>
                 <button className="bg-white text-orange-700 px-4 py-2 rounded-lg hover:bg-orange-100 transition ml-4">
-                Logout
+                Logg ut
                 </button>
             </NavLink>
           </div>
@@ -93,7 +93,7 @@ export default function ProdNavbar() {
                 }
                 onClick={() => setIsMenuOpen(false)}
               >
-                Company Profile
+                Bedriftsprofil
               </NavLink>
               <button className="bg-white text-orange-700 px-3 py-2 rounded hover:bg-orange-100 transition text-left">
                 Logout

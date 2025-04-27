@@ -7,22 +7,22 @@ const SwipePage: React.FC = () => {
 
   const [tiles, setTiles] = useState([
     {
-      title: "John Doe",
-      imageUrl: "https://placekitten.com/400/300",
-      description: "Loves mountain hiking and quiet evenings.",
+      title: "Olav Bulkestad",
+      imageUrl: "/images/olavbekk.png",
+      description: "Elsker å løfte tungt. hard carry",
       gender: "Male",
-      age: 28,
-      height: "183 cm",
-      weight: "76 kg"
+      age: 44,
+      height: "185 cm",
+      weight: "102 kg"
     },
     {
-      title: "Jane Smith",
-      imageUrl: "https://placekitten.com/401/300",
-      description: "Professional chef with a passion for travel.",
-      gender: "Female",
+      title: "Hackerman",
+      imageUrl: "https://artistsguide.to/wp-content/uploads/2020/06/55e88b65-914a-49a6-aa4d-935ab7368869_1920x1080.png",
+      description: "Ditt førstevalg for love island. Teknologientusiast",
+      gender: "Male",
       age: 31,
-      height: "168 cm",
-      weight: "62 kg"
+      height: "176 cm",
+      weight: "72 kg"
     },
     {
       title: "Alex Johnson",
@@ -40,7 +40,7 @@ const SwipePage: React.FC = () => {
 
   const allTags = ["Cute", "Funny", "Serious", "Adventurous", "Sleepy"];
 
-  // 👉 Removes the top tile when any button is clicked
+  // Removes the top tile when any button is clicked
   const handleTileAction = (color: string) => {
     if (color === "yellow") {
       // sent tile to the back
@@ -55,7 +55,7 @@ const SwipePage: React.FC = () => {
     }
   };
 
-  // 👉 Toggle tag selection
+  // Toggle tag selection
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
       prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
